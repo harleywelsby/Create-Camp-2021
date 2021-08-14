@@ -1,5 +1,5 @@
 import './App.css';
-import BankStatement from './Statement.js';
+import BankStatement from './BankStatement.js';
 import ModelProjections from './ModelProjections';
 import InputFile from './InputFile.js';
 import { useState } from 'react';

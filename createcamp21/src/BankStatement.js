@@ -12,14 +12,12 @@ function BankStatement(){
                         <th>
                             Amount
                         </th>
+                        <th>
+                            Category
+                        </th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>AawdawdAAAAAA</td> 
-                        <td>AAAAAAA</td> 
-                        <td>AAAAawdawdwadAAA</td> 
-                    </tr>
+                <tbody id="table-body">
                 </tbody>
             </table>
         </div>);
