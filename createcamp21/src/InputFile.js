@@ -9,10 +9,18 @@ function InputFile(props) {
   let count = 0;
   let transactions = [];
   let graphNodes = [];
+  let monthSorted = [];
+
+  const sortByMonth = (payments) => {
+    payments.sort(function(a, b) {
+      return (a-b); //NOTE: Doesn't work 
+    });
+  }
 
   const handleOnDrop = (data) => {
 
-    for (let i = 1; i < data.length; i++) {
+    //Get relevent columns
+    for(let i=1; i<data.length; i++){
       var transaction = {
         amount: data[i].data[17],
         balance: data[i].data[10],
@@ -26,9 +34,12 @@ function InputFile(props) {
       }
       transactions.push(transaction)
     }
+    
+    //Sort data into lists per graph
     for(let i=0; i<transactions.length; i++){
       var transaction = transactions[i];
       StatementRow(transaction.date, transaction.accountnumber,transaction.amount, null);
+      //Handle data for the line graph
       var graphNode = {
         name: transactions[i].date,
         balance: transactions[i].balance
@@ -36,6 +47,9 @@ function InputFile(props) {
       graphNodes.push(graphNode);
     }
     props.output(graphNodes);
+
+    //monthSorted = sortByMonth(transactions);
+    //console.log(monthSorted);
   };
 
   function StatementRow(date,account,amount,category) {
