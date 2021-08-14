@@ -16,10 +16,10 @@ function Habits() {
             </div>
             <div className = "HabitP">
                 <p>Money Spent:</p>
-                <p>Bills: $250</p>
-                <p>Regular: $80</p>
-                <p>Impulse: $128</p>
-                <p>Other: $39</p>
+                <p>Bills: ${data2[0].spendings}</p>
+                <p>Regular: ${data2[1].spendings}</p>
+                <p>Impulse: ${data2[2].spendings}</p>
+                <p>Other: ${data2[3].spendings}</p>
             </div>
         </div>
     );
