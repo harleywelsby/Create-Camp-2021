@@ -11,11 +11,18 @@ function App() {
     console.log(data);
     setLineInput(data);
   }
+
+  const [projectionInput, setProjectionInput] = useState();
+  const projectionInputLoad = (data) => {
+    console.log(data);
+    setProjectionInput(data);
+  } 
+
   return (
     <div className="App">   
       <BankStatement/>
       <ModelProjections lineInput = {lineInput}/>
-      <InputFile output={lineFileInput}/>
+      <InputFile output={lineFileInput} output2={projectionInputLoad}/>
       <Habits/>
     </div>
   );
