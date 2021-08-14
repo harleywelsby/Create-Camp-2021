@@ -3,6 +3,7 @@ import BankStatement from './BankStatement.js';
 import ModelProjections from './ModelProjections';
 import InputFile from './InputFile.js';
 import { useState } from 'react';
+import Habits from './Habits.js';
 
 function App() {
   const [ lineInput, setLineInput] = useState();
@@ -11,10 +12,11 @@ function App() {
     setLineInput(data);
   }
   return (
-    <div className="App">
+    <div className="App">   
       <BankStatement/>
       <ModelProjections lineInput = {lineInput}/>
       <InputFile output={lineFileInput}/>
+      <Habits/>
     </div>
   );
 }
