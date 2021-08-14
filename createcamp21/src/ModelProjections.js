@@ -1,4 +1,7 @@
 import {useState} from 'react'
+import MoneyLine from "./LineChart.js"
+
+const data = [{name: 'January', spendings: 400},{name: 'February', spendings: 300}, {name:'February',spendings:500}];
 
 //States:
 //Awaiting button (WAIT)
@@ -20,6 +23,7 @@ function ModelProjections() {
         </div>);
     } else {
         return (<div className="card-div">
+            <MoneyLine data={data}/>
             <button id="begin-button" onClick={flipState}>Hide how poor I am!</button>
         </div>);
     }
