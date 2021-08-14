@@ -1,9 +1,9 @@
 import {useState} from 'react'
 import MoneyLine from "./LineChart.js"
-import MoneyPie from "./PieChart.js"
+import "./ModelProjections.css"
+import Projection from "./Projection.js"
 
-const data = [{name: 'January', spendings: 400},{name: 'February', spendings: 300}, {name:'February',spendings:500}];
-const data2 = [{name: 'Bills', spendings: 400},{name: 'Regular', spendings: 300}, {name:'Impulse',spendings:500}];
+const data = [{name: 'January', balance: 400},{name: 'February', balance: 300}];
 
 //States:
 //Awaiting button (WAIT)
@@ -17,9 +17,7 @@ function ModelProjections(props) {
             setValue("TWEAK");
         } else if(value === "TWEAK"){
             setValue("WAIT");
-        } else {
-
-        }
+        } 
     };
 
     if(value === "WAIT") {
@@ -28,13 +26,13 @@ function ModelProjections(props) {
         </div>);
     } else if(value === "TWEAK"){
         return (<div className="card-div">
+            
+            <div className="lines">
             <MoneyLine data={props.lineInput}/>
-            <button id="begin-button" onClick={flipState}>Hide how poor I am!</button>
-        </div>);
-    } else {
-        return (<div className="card-div">
-            <MoneyLine data={props.lineInput}/>
-            <MoneyPie data={data2}/>
+            <div className="projection">
+            <Projection data={data}/>
+            </div>
+            </div>
             <button id="begin-button" onClick={flipState}>Hide how poor I am!</button>
         </div>);
     }

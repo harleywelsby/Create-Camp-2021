@@ -6,12 +6,21 @@ function InputFile(props) {
 
   const buttonRef = React.createRef();
 
+  let count = 0;
   let transactions = [];
   let graphNodes = [];
+  let monthSorted = [];
+
+  const sortByMonth = (payments) => {
+    payments.sort(function(a, b) {
+      return (a-b); //NOTE: Doesn't work 
+    });
+  }
 
   const handleOnDrop = (data) => {
 
-    for (let i = 1; i < data.length; i++) {
+    //Get relevent columns
+    for(let i=1; i<data.length; i++){
       var transaction = {
         amount: data[i].data[17],
         balance: data[i].data[10],
@@ -25,9 +34,12 @@ function InputFile(props) {
       }
       transactions.push(transaction)
     }
+    
+    //Sort data into lists per graph
     for(let i=0; i<transactions.length; i++){
       var transaction = transactions[i];
       StatementRow(transaction.date, transaction.accountnumber,transaction.amount, null);
+      //Handle data for the line graph
       var graphNode = {
         name: transactions[i].date,
         balance: transactions[i].balance
@@ -35,9 +47,13 @@ function InputFile(props) {
       graphNodes.push(graphNode);
     }
     props.output(graphNodes);
+
+    //monthSorted = sortByMonth(transactions);
+    //console.log(monthSorted);
   };
 
   function StatementRow(date,account,amount,category) {
+    count++;
     var table_body = document.getElementById("table-body");
     var tablerow = document.createElement("tr");
     var tabledate = document.createElement("td");
@@ -48,6 +64,35 @@ function InputFile(props) {
     tableamount.innerHTML = amount;
     var tablecategory = document.createElement("td");
     tablecategory.innerHTML = category;
+
+    var bill = document.createElement("button");
+    bill.id = count;
+    bill.className="brio";
+    bill.onclick=function(){  alert(this.id);};
+    bill.innerHTML="B"
+
+    var regular = document.createElement("button");
+    regular.id = count;
+    regular.className="brio";
+    regular.onclick=function(){  alert(this.id);};
+    regular.innerHTML="R"
+
+    var impulse = document.createElement("button");
+    impulse.id = count;
+    impulse.className="brio";
+    impulse.onclick=function(){  alert(this.id);};
+    impulse.innerHTML="I";
+    
+    var other = document.createElement("button");
+    other.className="brio";
+    other.id = count;
+    other.onclick=function(){  alert(this.id);};
+    other.innerHTML="O"
+    
+    tablecategory.append(bill);
+    tablecategory.append(regular);
+    tablecategory.append(impulse);
+    tablecategory.append(other);
     tablerow.append(tabledate);
     tablerow.append(tableaccount);
     tablerow.append(tableamount);

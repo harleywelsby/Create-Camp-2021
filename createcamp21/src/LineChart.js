@@ -10,9 +10,11 @@ function Chart(props) {
     setTime(props.data.length);
   }
   return (
-    <div>
-      <button id="Month" onClick={month}>Month</button>
-      <button id="Quarter" onClick={quarter}>Quarter</button>
+    <div className="line-chart">
+      <div className="line-buttons">
+      <button id="Month" onClick={month} className="line-button">M</button>
+      <button id="Quarter" onClick={quarter} className="line-button">Q</button>
+      </div>
       <MoneyLine data={props.data} end={time} />
     </div>
   )
