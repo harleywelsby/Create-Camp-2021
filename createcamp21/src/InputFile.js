@@ -65,20 +65,34 @@ function InputFile(props) {
     var tablecategory = document.createElement("td");
     tablecategory.innerHTML = category;
 
+    var bill = document.createElement("button");
+    bill.id = count;
+    bill.className="brio";
+    bill.onclick=function(){  alert(this.id);};
+    bill.innerHTML="B"
+
+    var regular = document.createElement("button");
+    regular.id = count;
+    regular.className="brio";
+    regular.onclick=function(){  alert(this.id);};
+    regular.innerHTML="R"
+
     var impulse = document.createElement("button");
-    impulse.id = count+"I";
+    impulse.id = count;
+    impulse.className="brio";
     impulse.onclick=function(){  alert(this.id);};
-    impulse.innerHTML="I"
-    var impulse = document.createElement("button");
-    impulse.id = count+"I";
-    impulse.onclick=function(){  alert(this.id);};
-    impulse.innerHTML="I"
-    var impulse = document.createElement("button");
-    impulse.id = count+"I";
-    impulse.onclick=function(){  alert(this.id);};
-    impulse.innerHTML="I"
+    impulse.innerHTML="I";
     
+    var other = document.createElement("button");
+    other.className="brio";
+    other.id = count;
+    other.onclick=function(){  alert(this.id);};
+    other.innerHTML="O"
+    
+    tablecategory.append(bill);
+    tablecategory.append(regular);
     tablecategory.append(impulse);
+    tablecategory.append(other);
     tablerow.append(tabledate);
     tablerow.append(tableaccount);
     tablerow.append(tableamount);
