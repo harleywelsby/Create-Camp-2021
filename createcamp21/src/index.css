@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightgray;
+  background-color: white;
 }
 
 code {
@@ -38,11 +38,14 @@ table {
 }
 
 table, th, td {
-  border: 1px solid lightgray;
   padding: 0.5rem;
   border-collapse: collapse;
+  border:none;
 }
-
+td{
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
 th {
   background-color: #0079b4 !important;
   color: white;
