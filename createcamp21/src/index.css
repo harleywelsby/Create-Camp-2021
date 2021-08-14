@@ -16,7 +16,8 @@ code {
 
 .card-div {
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   margin-left: 20rem;
   margin-right: 20rem;
   width: 60%;
@@ -30,4 +31,33 @@ code {
 
 .card-div:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid lightgray;
+  padding: 0.5rem;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #0079b4 !important;
+  color: white;
+}
+
+#begin-button {
+  color: white;
+  border: none;
+  background-color: #0079b4;
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+#begin-button:hover{
+  color: black;
+  background-color: lightblue;
 }
