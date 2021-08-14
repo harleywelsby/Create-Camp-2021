@@ -86,3 +86,7 @@ button:hover{
   border-width: 0;
   cursor: pointer;
 }
+#BankStatement {
+  max-height: 30rem;
+  overflow-y: auto;
+}

@@ -1,5 +1,5 @@
 function BankStatement(){
-    return (<div className="card-div">
+    return (<div id="BankStatement" className="card-div">
             <table>
                 <thead>
                     <tr>
