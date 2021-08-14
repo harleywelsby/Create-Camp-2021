@@ -5,21 +5,28 @@ const data = [{name: 'January', spendings: 400},{name: 'February', spendings: 30
 
 //States:
 //Awaiting button (WAIT)
-//Displaying default graphs (DEF)
+//Checking categories (TWEAK)
+//Displaying graphs (DISPLAY)
 
 function ModelProjections() {
     const [value, setValue] = useState("WAIT");
     const flipState = () => {
         if(value === "WAIT") {
-            setValue("DEF");
+            setValue("TWEAK");
+        } else if(value === ""){
+            setValue("DISPLAY");
         } else {
-            setValue("WAIT");
         }
     };
 
     if(value === "WAIT") {
         return (<div className="card-div">
             <button id="begin-button" onClick={flipState}>Show me how poor I am!</button>
+        </div>);
+    } else if(value === "TWEAK"){
+        return (<div className="card-div">
+            <MoneyLine data={data}/>
+            <button id="begin-button" onClick={flipState}>Hide how poor I am!</button>
         </div>);
     } else {
         return (<div className="card-div">

@@ -12,6 +12,9 @@ function BankStatement(){
                         <th>
                             Amount
                         </th>
+                        <th>
+                            Category
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
