@@ -1,0 +1,20 @@
+.lines{
+    flex-direction: row;
+    display: flex;
+    text-align:end;
+}
+
+.projection{
+    padding-top: 40px;
+}
+
+.line-buttons{
+display: flex;
+flex-direction: row;
+margin-left:50px    
+}
+
+.line-button{
+    border-radius: 50%;
+}
+
