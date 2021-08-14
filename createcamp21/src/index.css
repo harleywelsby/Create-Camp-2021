@@ -61,3 +61,8 @@ th {
   color: black;
   background-color: lightblue;
 }
+
+#BankStatement {
+  max-height: 30rem;
+  overflow-y: auto;
+}
