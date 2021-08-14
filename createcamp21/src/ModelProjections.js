@@ -26,6 +26,7 @@ function ModelProjections(props) {
         </div>);
     } else if(value === "TWEAK"){
         return (<div className="card-div">
+            
             <div className="lines">
             <MoneyLine data={props.lineInput}/>
             <div className="projection">

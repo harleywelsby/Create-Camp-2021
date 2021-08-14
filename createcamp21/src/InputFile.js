@@ -6,6 +6,7 @@ function InputFile(props) {
 
   const buttonRef = React.createRef();
 
+  let count = 0;
   let transactions = [];
   let graphNodes = [];
 
@@ -38,6 +39,7 @@ function InputFile(props) {
   };
 
   function StatementRow(date,account,amount,category) {
+    count++;
     var table_body = document.getElementById("table-body");
     var tablerow = document.createElement("tr");
     var tabledate = document.createElement("td");
@@ -48,6 +50,21 @@ function InputFile(props) {
     tableamount.innerHTML = amount;
     var tablecategory = document.createElement("td");
     tablecategory.innerHTML = category;
+
+    var impulse = document.createElement("button");
+    impulse.id = count+"I";
+    impulse.onclick=function(){  alert(this.id);};
+    impulse.innerHTML="I"
+    var impulse = document.createElement("button");
+    impulse.id = count+"I";
+    impulse.onclick=function(){  alert(this.id);};
+    impulse.innerHTML="I"
+    var impulse = document.createElement("button");
+    impulse.id = count+"I";
+    impulse.onclick=function(){  alert(this.id);};
+    impulse.innerHTML="I"
+    
+    tablecategory.append(impulse);
     tablerow.append(tabledate);
     tablerow.append(tableaccount);
     tablerow.append(tableamount);
