@@ -13,15 +13,16 @@ function ModelProjections() {
     const flipState = () => {
         if(value === "WAIT") {
             setValue("TWEAK");
-        } else if(value === ""){
-            setValue("DISPLAY");
+        } else if(value === "TWEAK"){
+            setValue("WAIT");
         } else {
+
         }
     };
 
     if(value === "WAIT") {
         return (<div className="card-div">
-            <button id="begin-button" onClick={flipState}>Show me how poor I am!</button>
+            <button id="begin-button" onClick={flipState}>Show my insights!</button>
         </div>);
     } else if(value === "TWEAK"){
         return (<div className="card-div">
