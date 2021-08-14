@@ -33,7 +33,7 @@ function MoneyLine(props) {
     return Math.round(Math.max.apply(null, values)/1000)*1000;
   }
   
-  return <LineChart width={400} height={400} data={currentData(props.end)}>
+  return <LineChart width={400} height={400} data={currentData(props.end)} className="chart">
     <Line type="monotone" dataKey="balance" stroke="#8884d8" />
     <Tooltip />
     <XAxis dataKey="name" />

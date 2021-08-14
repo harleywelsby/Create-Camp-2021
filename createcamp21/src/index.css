@@ -58,6 +58,31 @@ th {
 }
 
 #begin-button:hover{
-  color: black;
+  color: rgb(71, 70, 70);
   background-color: lightblue;
+}
+
+.chart {
+  margin: auto;
+  width: auto;
+}
+
+button{
+  padding: 5px;
+  margin: 5px;
+  background-color:#0079b4;
+  border-width: 0;
+  color:white;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+button:hover{
+  padding: 5px;
+  margin: 5px;
+  background-color: lightblue;
+  color:rgb(68, 66, 66);
+  border-width: 0;
+  cursor: pointer;
 }

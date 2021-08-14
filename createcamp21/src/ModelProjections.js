@@ -28,7 +28,7 @@ function ModelProjections(props) {
         </div>);
     } else if(value === "TWEAK"){
         return (<div className="card-div">
-            <MoneyLine data={data}/>
+            <MoneyLine data={props.lineInput}/>
             <button id="begin-button" onClick={flipState}>Hide how poor I am!</button>
         </div>);
     } else {
