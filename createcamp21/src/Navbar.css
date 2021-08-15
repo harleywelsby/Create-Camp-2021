@@ -1,0 +1,45 @@
+/*CSS for the Navbar*/
+:root {
+  --logo-blue: white;
+  --select-colour: white;
+}
+
+.navbar {
+  background-color: #0079b4;
+}
+
+.logo{
+  width:16.25rem;
+  margin-left: -3rem;
+}
+
+nav a.nav-link {
+  font-size: 1.5rem !important;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-nav > li > a {
+  color: var(--logo-blue) !important;
+  margin-right: 0.50rem;
+  margin-left: 0.50rem;
+  border-bottom: 0.2rem solid var(--bg-colour);
+}
+
+.navbar-logo {
+  padding: 0 !important;
+  height: 4.35rem !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  margin-top: 2rem;
+  margin-left: 8rem;
+}
