@@ -12,8 +12,6 @@ function ProjectData(transactions) {
     month2 = month3-1;
     month1 = month3-2;
 
-    alert("Month1: " + month1  + " Month2: " + month2 + " Month3: " + month3)
-
     if(month2 < 1) {
         month2 = 12 - month2;
     }
@@ -49,19 +47,25 @@ function ProjectData(transactions) {
     month2Increase = month3InitialBalance - month2InitialBalance;
     month3Increase = month3FinalBalance - month3InitialBalance;
 
-    alert(month1InitialBalance + " : " + month2InitialBalance + " : " + month1Increase);
-    alert(month2InitialBalance + " : " + month3InitialBalance + " : " + month2Increase);
-    alert(month3InitialBalance + " : " + month3FinalBalance + " : " + month3Increase);
+    alert("Month1: " + month1Increase);
+    alert("Month2: " + month2Increase);
+    alert("Month3:  " + month3Increase);
 
     averageMonthlyIncrease = (month1Increase + month2Increase + month3Increase) / 3;
 
-    var nextMonth = month3FinalBalance + averageMonthlyIncrease;
+    alert("Average: " + averageMonthlyIncrease  );
+
+    var nextMonth = parseInt(month3FinalBalance + averageMonthlyIncrease);
     var nextNextMonth = nextMonth + averageMonthlyIncrease;
     var nextNextNextMonth = nextNextMonth + averageMonthlyIncrease;
 
-    var nextMonthObject = {name: "Bills", spendings : nextMonth};
-    var nextNextMonthObject = {name: "Bills", spendings : nextNextMonth};
-    var nextNextNextMonthObject = {name: "Bills", spendings : nextNextNextMonth};
+    alert("Next month: " + nextMonth);
+    alert("Next Next month: " + nextNextMonth);
+    alert("Next Next Next month: " + nextNextNextMonth);
+
+    var nextMonthObject = {name: "Next Month", balance : parseInt(nextMonth)};
+    var nextNextMonthObject = {name: "Next Next Month", balance : parseInt(nextNextMonth)};
+    var nextNextNextMonthObject = {name: "Next Next Next Month", balance : parseInt(nextNextNextMonth)};
 
     return [nextMonthObject, nextNextMonthObject, nextNextNextMonthObject];
 }

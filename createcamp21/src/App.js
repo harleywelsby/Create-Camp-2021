@@ -21,9 +21,9 @@ function App() {
   return (
     <div className="App">   
       <BankStatement/>
-      <ModelProjections lineInput = {lineInput}/>
+      <ModelProjections lineInput = {lineInput} projectionInput = {projectionInput}/>
       <InputFile output={lineFileInput} output2={projectionInputLoad}/>
-      <Habits/>
+      <Habits things={projectionInput}/>
     </div>
   );
 }
