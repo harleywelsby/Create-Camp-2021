@@ -16,6 +16,8 @@ code {
 
 .card-div {
   text-align: center;
+  overflow: scroll;
+  max-height: 500px;
   margin-top: 2rem;
   margin-bottom: 2rem;
   margin-left: auto;

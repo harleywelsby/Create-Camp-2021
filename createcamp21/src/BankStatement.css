@@ -15,3 +15,7 @@ table {
 button{
   background-color: #cceeff  ;
 }
+
+.bank{
+  max-height: 200px;
+}
