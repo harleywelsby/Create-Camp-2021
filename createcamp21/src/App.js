@@ -4,6 +4,7 @@ import ModelProjections from './ModelProjections';
 import InputFile from './InputFile.js';
 import { useState } from 'react';
 import Habits from './Habits.js';
+import Header from './Navbar.js';
 
 function App() {
   const [ lineInput, setLineInput] = useState();
@@ -12,7 +13,8 @@ function App() {
     setLineInput(data);
   }
   return (
-    <div className="App">   
+    <div className="App"> 
+      <Header/>  
       <BankStatement/>
       <ModelProjections lineInput = {lineInput}/>
       <InputFile output={lineFileInput}/>
