@@ -13,6 +13,7 @@
 }
 
 .col {
+  margin-left: 7rem;
   float: left;
   width: 33.33%;
   padding: 15px;

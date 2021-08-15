@@ -16,6 +16,9 @@ const Footer = () => {
 
                 <div class = "col">
                     <p>Contact:</p>
+                    <p>lorem@avocado.co.nz</p>
+                    <p>0800 269 296</p>
+                    <p>The A in ANZ Stands for Avocado</p>
                 </div>
 
             </div>
