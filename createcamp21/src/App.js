@@ -18,7 +18,7 @@ function App() {
       <BankStatement/>
       <ModelProjections lineInput = {lineInput}/>
       <InputFile output={lineFileInput}/>
-      <Habits/>
+      <Habits id={1} />
     </div>
   );
 }

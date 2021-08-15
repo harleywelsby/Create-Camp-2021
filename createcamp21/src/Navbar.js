@@ -15,7 +15,7 @@ const Navbar = () => {
                     </div>
 
                     <div class="nav-item">
-                        <a class="nav-link" href="/"> Habits </a>
+                        <a class="nav-link" href="#1"> Habits </a>
                     </div>
 
                     <div class="nav-item">
