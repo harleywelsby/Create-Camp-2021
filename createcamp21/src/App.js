@@ -22,10 +22,11 @@ function App() {
   return (
     <div className="App"> 
       <Header/>  
-      <BankStatement/>
-      <ModelProjections lineInput = {lineInput} projectionInput = {projectionInput}/>
       <InputFile output={lineFileInput} output2={projectionInputLoad}/>
+      <ModelProjections lineInput = {lineInput} projectionInput = {projectionInput}/>
       <Habits things={projectionInput}/>
+      <BankStatement/>
+
     </div>
   );
 }
