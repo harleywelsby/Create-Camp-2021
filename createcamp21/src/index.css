@@ -18,8 +18,8 @@ code {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  margin-left: 20rem;
-  margin-right: 20rem;
+  margin-left: auto;
+  margin-right: auto;
   width: 60%;
   height: 60%;
   background-color: white;

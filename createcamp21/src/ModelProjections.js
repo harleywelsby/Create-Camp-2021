@@ -34,7 +34,7 @@ function ModelProjections(props) {
             <Projection data={props.projectionInput}/>
             </div>
             </div>
-            <button id="begin-button" onClick={flipState}>Hide how poor I am!</button>
+            <button id="begin-button" onClick={flipState}>Hide your graphs!</button>
         </div>);
     }
 }
