@@ -5,15 +5,21 @@ import MoneyPie from "./PieChart.js"
 import avoPic from "./Avocado.svg"
 
 function Habits() {
-    const data2 = [{name: 'Bills', spendings: 250},{name: 'Regular', spendings: 80}, {name:'Impulse',spendings:128}, {name:'Other',spendings:39}];
+
+    function getRandomInt(max) {
+        return Math.floor(20 + Math.random() * max);
+      }
+    const avg = [{name: 'Bills', spendings: 100},{name: 'Regular', spendings: 129}, {name:'Impulse',spendings:61}, {name:'Other',spendings:33}];
+    const data2 = [{name: 'Bills', spendings: getRandomInt(160)},{name: 'Regular', spendings: getRandomInt(180)}, {name:'Impulse',spendings:getRandomInt(15)}, {name:'Other',spendings:getRandomInt(20)}];
     return (
         <div className="habits">
-            <h1 className="HabitHeader">Habits:</h1>
+            <h1 className="HabitHeader">Weekly Habits:</h1>
             <img className = "avo" src={avoPic}/>
             
             <div className = "pieDiv">
-                <MoneyPie className="pieChart" data={data2}/>
+                <MoneyPie className="pieChart" data={data2} data2={avg}/>
             </div>
+
             <div className = "HabitP">
                 <p>Money Spent:</p>
                 <p>Bills: ${data2[0].spendings}</p>
