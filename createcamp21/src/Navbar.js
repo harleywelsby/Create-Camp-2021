@@ -9,25 +9,18 @@ const Navbar = () => {
         <nav class="navbar">
             <div className="container"> 
                 <div className="logo"><img src={logo} alt = "Logo" width = "100" height = "100" /></div>
-                
-                    <div class="nav-item active">
-                        <a class="nav-link" href="/"> Balance </a>
+                    
+                    <div class="nav-item active" href="#graphs">
+                        <a class="nav-link" href="/"> Graphs </a>
                     </div>
 
                     <div class="nav-item">
-                        <a class="nav-link" href="#1"> Habits </a>
+                        <a class="nav-link" href="#habits"> Habits </a>
                     </div>
 
-                    <div class="nav-item">
-                        <a class="nav-link" href="/"> Saved </a>
-                    </div>
 
                     <div class="nav-item">
-                        <a class="nav-link" href="/"> Review </a>
-                    </div>
-
-                    <div class="nav-item">
-                        <a class="nav-link" href="/"> Categories </a>
+                        <a class="nav-link" href="#review"> Review </a>
                     </div>
 
             </div>

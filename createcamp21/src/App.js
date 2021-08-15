@@ -5,6 +5,7 @@ import InputFile from './InputFile.js';
 import { useState } from 'react';
 import Habits from './Habits.js';
 import Header from './Navbar.js';
+import Footer from './Footer.js';
 
 function App() {
   const [ lineInput, setLineInput] = useState();
@@ -22,10 +23,11 @@ function App() {
   return (
     <div className="App"> 
       <Header/>  
-      <BankStatement/>
-      <ModelProjections lineInput = {lineInput} projectionInput = {projectionInput}/>
       <InputFile output={lineFileInput} output2={projectionInputLoad}/>
+      <ModelProjections lineInput = {lineInput} projectionInput = {projectionInput}/>
       <Habits things={projectionInput}/>
+      <BankStatement/>
+      <Footer/>
     </div>
   );
 }

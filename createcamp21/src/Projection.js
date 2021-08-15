@@ -24,8 +24,10 @@ function MoneyLine(props) {
   return <LineChart width={400} height={400} data={props.data} className="chart">
     <Line type="monotone" dataKey="balance" stroke="red" />
     <Tooltip />
-    <XAxis dataKey="name" />
-    <YAxis domain={[0,maxData()]}/>
+    <Line type="monotone" dataKey="balance" stroke="#33bbff" />
+    <Tooltip />
+    <XAxis dataKey="name" stroke="#004165"/>
+    <YAxis domain={[0,maxData()]} stroke="#004165"/>
   </LineChart>;
 }
 

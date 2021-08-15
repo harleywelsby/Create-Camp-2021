@@ -12,8 +12,8 @@ function Chart(props) {
   return (
     <div className="line-chart">
       <div className="line-buttons">
-      <button id="Month" onClick={month} className="line-button">M</button>
-      <button id="Quarter" onClick={quarter} className="line-button">Q</button>
+      <button id="Month" onClick={month} className="line-button">Month</button>
+      <button id="Quarter" onClick={quarter} className="line-button">Quarter</button>
       </div>
       <MoneyLine data={props.data} end={time} />
     </div>
@@ -36,12 +36,12 @@ function MoneyLine(props) {
   }
   
   return <LineChart width={400} height={400} data={currentData(props.end)} className="chart">
-    <Line type="monotone" dataKey="balance" stroke="#8884d8" />
+    <Line type="monotone" dataKey="balance" stroke="#33bbff" />
     <Line type="monotone" dataKey="newbalance" stroke="#FF0000" />
 
     <Tooltip />
-    <XAxis dataKey="name" />
-    <YAxis domain={[0,maxData()]}/>
+    <XAxis dataKey="name" stroke="#004165"/>
+    <YAxis domain={[0,maxData()]} stroke="#004165"/>
   </LineChart>;
 }
 
