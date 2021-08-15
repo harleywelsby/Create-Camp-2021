@@ -1,6 +1,7 @@
 import './InputFile.css';
 import { CSVReader, readString } from 'react-papaparse';
 import React, { Component } from 'react';
+import ProjectData from './Model.js';
 
 function InputFile(props) {
 
@@ -34,8 +35,7 @@ function InputFile(props) {
       }
       transactions.push(transaction)
     }
-    
-    //Sort data into lists per graph
+    props.output2(ProjectData(transactions));
     for(let i=0; i<transactions.length; i++){
       var transaction = transactions[i];
       StatementRow(transaction.date, transaction.accountnumber,transaction.amount, null);
@@ -98,7 +98,6 @@ function InputFile(props) {
     tablerow.append(tableamount);
     tablerow.append(tablecategory);
     table_body.append(tablerow);
-    
 }
 
   return (
