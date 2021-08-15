@@ -31,7 +31,7 @@ function ModelProjections(props) {
             <div className="lines">
             <MoneyLine data={props.lineInput}/>
             <div className="projection">
-            <Projection data={data}/>
+            <Projection data={props.projectionInput}/>
             </div>
             </div>
             <button id="begin-button" onClick={flipState}>Hide how poor I am!</button>
