@@ -37,6 +37,8 @@ function MoneyLine(props) {
   
   return <LineChart width={400} height={400} data={currentData(props.end)} className="chart">
     <Line type="monotone" dataKey="balance" stroke="#8884d8" />
+    <Line type="monotone" dataKey="newbalance" stroke="#FF0000" />
+
     <Tooltip />
     <XAxis dataKey="name" />
     <YAxis domain={[0,maxData()]}/>

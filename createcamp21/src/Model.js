@@ -47,27 +47,41 @@ function ProjectData(transactions) {
     month2Increase = month3InitialBalance - month2InitialBalance;
     month3Increase = month3FinalBalance - month3InitialBalance;
 
-    //alert("Month1: " + month1Increase);
-    //alert("Month2: " + month2Increase);
-    //alert("Month3:  " + month3Increase);
-
     averageMonthlyIncrease = (month1Increase + month2Increase + month3Increase) / 3;
-
-    //alert("Average: " + averageMonthlyIncrease  );
 
     var nextMonth = parseInt(month3FinalBalance + averageMonthlyIncrease);
     var nextNextMonth = nextMonth + averageMonthlyIncrease;
     var nextNextNextMonth = nextNextMonth + averageMonthlyIncrease;
 
-    //alert("Next month: " + nextMonth);
-    //alert("Next Next month: " + nextNextMonth);
-    //alert("Next Next Next month: " + nextNextNextMonth);
-
     var nextMonthObject = {name: "Next Month", balance : parseInt(nextMonth)};
     var nextNextMonthObject = {name: "Next Next Month", balance : parseInt(nextNextMonth)};
     var nextNextNextMonthObject = {name: "Next Next Next Month", balance : parseInt(nextNextNextMonth)};
 
-    return [nextMonthObject, nextNextMonthObject, nextNextNextMonthObject];
+    var sliderElement = document.getElementById("savingsSlider");
+    var sliderValue;
+    alert("checking");
+    if(sliderElement != null) {
+        sliderValue = sliderElement.nodeValue;
+        var extraMonthly = averageMonthlyIncrease + (averageMonthlyIncrease * ((100-sliderValue)/100))
+        var extraNextMonth = parseInt(month3FinalBalance + extraMonthly);
+        var extraNextNextMonth = extraNextMonth + extraMonthly;
+        var extraNextNextNextMonth = extraNextNextMonth + extraMonthly; 
+
+        alert("extra monthly: " + extraMonthly);
+
+        alert(nextNextNextMonth + " : " + extraNextNextNextMonth);
+
+
+        var extraNextMonthObject = {name:"Next Month", newbalance : parseInt(extraNextMonth)};
+        var extraNextNextMonthObject = {name: "Next Next Month", newbalance : parseInt(extraNextNextMonth)};
+        var extraNextNextNextMonthObject = {name : "Next Next Next Month", newbalance : parseInt(extraNextNextNextMonth)}; 
+        nextMonthObject = extraNextMonthObject;
+        nextNextMonthObject = extraNextNextMonthObject;
+        nextNextNextMonthObject = extraNextNextNextMonthObject;
+        return [nextMonthObject, nextNextMonthObject, nextNextNextMonthObject, extraNextMonthObject, extraNextNextMonthObject, extraNextNextNextMonthObject];
+    } else {
+        return [nextMonthObject, nextNextMonthObject, nextNextNextMonthObject];
+    }
 }
 
 export default ProjectData;

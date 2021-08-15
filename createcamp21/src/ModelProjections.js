@@ -10,8 +10,21 @@ const data = [{name: 'January', balance: 400},{name: 'February', balance: 300}];
 //Checking categories (TWEAK)
 //Displaying graphs (DISPLAY)
 
+var slidervalue = 100;
+
 function ModelProjections(props) {
     const [value, setValue] = useState("WAIT");
+    const [slidervalue, setSliderValue] = useState(100);
+    const setSlider = () =>{
+        var slider = document.getElementById("savingsSlider");
+        if(slider != null) {
+            alert("yes");
+            setSliderValue(slider.value);
+            setValue("TWEAK");
+        }else{
+            alert("OWIYTOWIYT")
+        }
+    }
     const flipState = () => {
         if(value === "WAIT") {
             setValue("TWEAK");
@@ -33,9 +46,14 @@ function ModelProjections(props) {
             <div className="projection">
             <Projection data={props.projectionInput}/>
             </div>
+            <div className="sliderMargins">
+                <input name="savingsSlider" id="savingsSlider" onChange={setSlider} type="range" orient="vertical" max="100" min="0" defaultValue={slidervalue}/>
+                <label for="savingsSlider">Savings!</label>
+            </div>
             </div>
             <button id="begin-button" onClick={flipState}>Hide how poor I am!</button>
         </div>);
+        
     }
 }
 

@@ -88,3 +88,8 @@ button:hover{
   max-height: 30rem;
   overflow-y: auto;
 }
+
+.sliderMargins {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
