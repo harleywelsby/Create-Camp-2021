@@ -19,7 +19,7 @@ nav a.nav-link {
   letter-spacing: 0.05rem;
   cursor: pointer;
   text-decoration: none;
-  color: white;
+  color: #004165 !important;
 }
 
 .navbar-nav > li > a {

@@ -27,6 +27,13 @@ code {
 
 }
 
+p {
+  color: #004165 !important;
+}
+
+h1 {
+  color: #004165 !important;
+}
 
 table {
   width: 100%;
