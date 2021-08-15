@@ -18,7 +18,18 @@ function InputFile(props) {
   }
 
   const handleOnDrop = (data) => {
-
+    let categories = ["Bills","Other","Impulse","Regular"]
+    let category = (cost) =>{
+      if(cost<10){
+        return "Impulse";
+      }else if(cost < 50){
+        return "Regular"
+      }else if(cost<200){
+        return "Bills"
+      }else{
+        return "Other";
+      }
+    }
     //Get relevent columns
     for(let i=1; i<data.length; i++){
       var transaction = {
@@ -38,11 +49,13 @@ function InputFile(props) {
     //Sort data into lists per graph
     for(let i=0; i<transactions.length; i++){
       var transaction = transactions[i];
-      StatementRow(transaction.date, transaction.accountnumber,transaction.amount, null);
+      var transCategory = category(transactions[i].amount);
+      StatementRow(transaction.date, transaction.accountnumber,transaction.amount, transCategory);
       //Handle data for the line graph
       var graphNode = {
         name: transactions[i].date,
-        balance: transactions[i].balance
+        balance: transactions[i].balance,
+        category: transCategory
       }
       graphNodes.push(graphNode);
     }
@@ -63,30 +76,53 @@ function InputFile(props) {
     var tableamount = document.createElement("td");
     tableamount.innerHTML = amount;
     var tablecategory = document.createElement("td");
-    tablecategory.innerHTML = category;
 
     var bill = document.createElement("button");
-    bill.id = count;
+    bill.id = count+"B";
     bill.className="brio";
-    bill.onclick=function(){  alert(this.id);};
+    category=="Bills"?bill.style.cssText="border-width:2px;width:25px;":bill.style.cssText="width:25px"
+    bill.onclick=function(){  
+      bill.style.cssText="border-width:2px;width:25px;"
+      document.getElementById(this.id.slice(0,-1)+"I").style.cssText="width:25px"
+      document.getElementById(this.id.slice(0,-1)+"R").style.cssText="width:25px"
+      document.getElementById(this.id.slice(0,-1)+"O").style.cssText="width:25px"
+  };
     bill.innerHTML="B"
 
     var regular = document.createElement("button");
-    regular.id = count;
+    regular.id = count+"R";
     regular.className="brio";
-    regular.onclick=function(){  alert(this.id);};
+    category=="Regular"?regular.style.cssText="border-width:2px;width:25px;":regular.style.cssText="width:25px"
+    regular.onclick=function(){  
+      regular.style.cssText="border-width:2px;width:25px;"
+      document.getElementById(this.id.slice(0,-1)+"I").style.cssText="width:25px"
+      document.getElementById(this.id.slice(0,-1)+"B").style.cssText="width:25px"
+      document.getElementById(this.id.slice(0,-1)+"O").style.cssText="width:25px"
+  };
     regular.innerHTML="R"
 
     var impulse = document.createElement("button");
-    impulse.id = count;
+    impulse.id = count+"I";
     impulse.className="brio";
-    impulse.onclick=function(){  alert(this.id);};
+    category=="Impulse"?impulse.style.cssText="border-width:2px;width:25px;":impulse.style.cssText="width:25px"
+    impulse.onclick=function(){  
+      impulse.style.cssText="border-width:2px;width:25px;"
+      document.getElementById(this.id.slice(0,-1)+"B").style.cssText="width:25px"
+      document.getElementById(this.id.slice(0,-1)+"R").style.cssText="width:25px"
+      document.getElementById(this.id.slice(0,-1)+"O").style.cssText="width:25px"
+  };
     impulse.innerHTML="I";
     
     var other = document.createElement("button");
     other.className="brio";
-    other.id = count;
-    other.onclick=function(){  alert(this.id);};
+    other.id = count+"O";
+    category=="Other"?other.style.cssText="border-width:2px;width:25px;":other.style.cssText="width:25px"
+    other.onclick=function(){  
+      other.style.cssText="border-width:2px;width:25px;"
+      document.getElementById(this.id.slice(0,-1)+"B").style.cssText="width:25px"
+      document.getElementById(this.id.slice(0,-1)+"R").style.cssText="width:25px"
+      document.getElementById(this.id.slice(0,-1)+"I").style.cssText="width:25px"
+  };
     other.innerHTML="O"
     
     tablecategory.append(bill);
