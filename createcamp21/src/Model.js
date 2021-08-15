@@ -47,21 +47,21 @@ function ProjectData(transactions) {
     month2Increase = month3InitialBalance - month2InitialBalance;
     month3Increase = month3FinalBalance - month3InitialBalance;
 
-    alert("Month1: " + month1Increase);
-    alert("Month2: " + month2Increase);
-    alert("Month3:  " + month3Increase);
+    //alert("Month1: " + month1Increase);
+    //alert("Month2: " + month2Increase);
+    //alert("Month3:  " + month3Increase);
 
     averageMonthlyIncrease = (month1Increase + month2Increase + month3Increase) / 3;
 
-    alert("Average: " + averageMonthlyIncrease  );
+    //alert("Average: " + averageMonthlyIncrease  );
 
     var nextMonth = parseInt(month3FinalBalance + averageMonthlyIncrease);
     var nextNextMonth = nextMonth + averageMonthlyIncrease;
     var nextNextNextMonth = nextNextMonth + averageMonthlyIncrease;
 
-    alert("Next month: " + nextMonth);
-    alert("Next Next month: " + nextNextMonth);
-    alert("Next Next Next month: " + nextNextNextMonth);
+    //alert("Next month: " + nextMonth);
+    //alert("Next Next month: " + nextNextMonth);
+    //alert("Next Next Next month: " + nextNextNextMonth);
 
     var nextMonthObject = {name: "Next Month", balance : parseInt(nextMonth)};
     var nextNextMonthObject = {name: "Next Next Month", balance : parseInt(nextNextMonth)};
