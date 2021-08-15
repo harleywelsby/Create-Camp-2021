@@ -5,6 +5,7 @@ import InputFile from './InputFile.js';
 import { useState } from 'react';
 import Habits from './Habits.js';
 import Header from './Navbar.js';
+import Footer from './Footer.js';
 
 function App() {
   const [ lineInput, setLineInput] = useState();
@@ -26,7 +27,7 @@ function App() {
       <ModelProjections lineInput = {lineInput} projectionInput = {projectionInput}/>
       <Habits things={projectionInput}/>
       <BankStatement/>
-
+      <Footer/>
     </div>
   );
 }

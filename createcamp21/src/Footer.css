@@ -1,0 +1,19 @@
+.footer {
+  text-align: center !important;
+  background-color: #cceeff;
+  margin: auto;
+  margin-left: auto;
+  width: 100%;
+}
+
+.infoSection:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
