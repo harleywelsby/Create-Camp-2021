@@ -9,6 +9,9 @@ table {
   }
   
   th {
-    background-color: #0079b4 !important;
+    background-color: #007dba !important;
     color: white;
   } 
+button{
+  background-color: #cceeff  ;
+}
