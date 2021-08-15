@@ -1,6 +1,6 @@
 # Create-Camp-2021
 
-A group project with work distributed between 3 designers and 3 developers, designed for Summer of Tech's Create Camp event.
+A group project with work distributed between 3 designers and 3 developers, designed for Summer of Tech's Create Camp event. Create Camp is a hackathon over two 9-5 days, where teams attempt to take a product from idea to implementation and pitch it to a team of industry professionals. 
 
 Our team for this event was:
 
