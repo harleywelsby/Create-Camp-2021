@@ -23,6 +23,14 @@
     margin-left: 3.5rem;
 }
 
+.pieDiv2 {
+    /*color: red !important;*/
+    margin-top: -25.5rem !important;
+    margin-bottom: 10rem;
+    margin-left: 3.5rem;
+    opacity: 50%;
+}
+
 .HabitP {
     margin-top: -25rem;
     margin-bottom: 10rem;
