@@ -12,7 +12,7 @@ function Habits() {
     const avg = [{name: 'Bills', spendings: 100},{name: 'Regular', spendings: 129}, {name:'Impulse',spendings:61}, {name:'Other',spendings:33}];
     const data2 = [{name: 'Bills', spendings: getRandomInt(160)},{name: 'Regular', spendings: getRandomInt(180)}, {name:'Impulse',spendings:getRandomInt(15)}, {name:'Other',spendings:getRandomInt(20)}];
     return (
-        <div className="habits">
+        <div className="habits" id="habits">
             <h1 className="HabitHeader">Weekly Habits:</h1>
             <img className = "avo" src={avoPic}/>
             

@@ -21,12 +21,12 @@ function ModelProjections(props) {
     };
 
     if(value === "WAIT") {
-        return (<div className="card-div">
+        return (<div className="card-div" id="graphs">
             <h1>Graphs</h1>
             <button id="begin-button" onClick={flipState}>Show your graphs!</button>
         </div>);
     } else if(value === "TWEAK"){
-        return (<div className="card-div">
+        return (<div className="card-div" id="graphs">
             <h1>Graphs</h1>
             <div className="lines">
             <MoneyLine data={props.lineInput}/>
